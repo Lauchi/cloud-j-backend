@@ -16,7 +16,7 @@ namespace cloud_j_backend
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
+                routeTemplate: "mixer/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
         }
