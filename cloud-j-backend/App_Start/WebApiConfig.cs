@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Http;
+﻿using System.Web.Http;
 
 namespace cloud_j_backend
 {
@@ -16,7 +13,7 @@ namespace cloud_j_backend
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
-                routeTemplate: "mixer/{controller}/{id}",
+                routeTemplate: "channels/{channelId}/{controller}",
                 defaults: new { id = RouteParameter.Optional }
             );
         }
