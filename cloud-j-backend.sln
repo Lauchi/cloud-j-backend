@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27004.2006
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cloud-j-backend", "cloud-j-backend\cloud-j-backend.csproj", "{DE8A567C-C598-43C8-8E9C-EB54F426A568}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioEngine", "AudioEngine\AudioEngine.csproj", "{F221F0FD-5C5F-4836-B0EF-6577E86D374A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{DE8A567C-C598-43C8-8E9C-EB54F426A568}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE8A567C-C598-43C8-8E9C-EB54F426A568}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE8A567C-C598-43C8-8E9C-EB54F426A568}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F221F0FD-5C5F-4836-B0EF-6577E86D374A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F221F0FD-5C5F-4836-B0EF-6577E86D374A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F221F0FD-5C5F-4836-B0EF-6577E86D374A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F221F0FD-5C5F-4836-B0EF-6577E86D374A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

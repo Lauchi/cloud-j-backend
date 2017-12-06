@@ -2,11 +2,11 @@
 {
     public class VolumeDto
     {
-        public VolumeDto(double volumeValue)
+        public VolumeDto(float volumeValue)
         {
             VolumeValue = volumeValue;
         }
-        
-        public double VolumeValue { get; set; }
+
+        public float VolumeValue { get; set; }
     }
 }
