@@ -5,16 +5,18 @@ namespace cloud_j_backend.Controllers.Volume
 {
     public class VolumesController : ApiController
     {
-        public IEnumerable<string> Get()
+        [HttpGet]
+        [Route("channels/{channelId}/volume")]
+        public IHttpActionResult Get()
         {
-            return new string[] { "value1", "value2" };
+            return Ok(new VolumeDto(5.6));
         }
 
         [HttpPost]
         [Route("channels/{channelId}/volume")]
-        public void ChangeVolume(int channelId, [FromBody]VolumePost volumePost)
+        public IHttpActionResult ChangeVolume(int channelId, [FromBody]VolumeDto volumeDto)
         {
-
+            return Ok(volumeDto);
         }
     }
 }
