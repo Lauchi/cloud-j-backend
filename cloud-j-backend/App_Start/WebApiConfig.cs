@@ -10,12 +10,6 @@ namespace cloud_j_backend
 
             // Web API routes
             config.MapHttpAttributeRoutes();
-
-            config.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "channels/{channelId}/{controller}",
-                defaults: new { id = RouteParameter.Optional }
-            );
         }
     }
 }
