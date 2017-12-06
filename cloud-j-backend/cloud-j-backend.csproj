@@ -122,6 +122,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\Transport\PlayPauseController.cs" />
     <Compile Include="Controllers\Volume\VolumeDto.cs" />
     <Compile Include="Controllers\Volume\VolumesController.cs" />
     <Compile Include="Global.asax.cs">
