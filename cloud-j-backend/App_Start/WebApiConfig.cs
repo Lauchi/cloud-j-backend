@@ -1,4 +1,5 @@
-﻿using System.Web.Http;
+﻿using cloud_j_backend.App_Start;
+using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Routing;
 
@@ -9,7 +10,7 @@ namespace cloud_j_backend
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
-
+            StructuremapWebApi.Start();
             // Web API routes
             config.MapHttpAttributeRoutes(new CentralizedPrefixProvider("channels/{channelId}"));
         }

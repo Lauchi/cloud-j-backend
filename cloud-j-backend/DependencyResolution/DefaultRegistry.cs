@@ -16,10 +16,19 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 namespace cloud_j_backend.DependencyResolution {
+    using AudioEngine.Domain;
+    using cloud_j_backend.Controllers.Volume;
+    using CSCore;
+    using CSCore.Codecs;
+    using CSCore.SoundOut;
+    using CSCore.Streams;
     using StructureMap.Configuration.DSL;
     using StructureMap.Graph;
-	
+    using System.Collections.Generic;
+
     public class DefaultRegistry : Registry {
+        private SimpleMixer _mixer;
+        private VolumeSource _volumeSource1;
         #region Constructors and Destructors
 
         public DefaultRegistry() {
@@ -28,7 +37,8 @@ namespace cloud_j_backend.DependencyResolution {
                     scan.TheCallingAssembly();
                     scan.WithDefaultConventions();
                 });
-            //For<IExample>().Use<Example>();
+
+            For<IMixer>().Singleton().Use<Mixer>();
         }
 
         #endregion
