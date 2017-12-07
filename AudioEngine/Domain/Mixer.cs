@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using CSCore;
 using CSCore.SoundOut;
 using CSCore.Streams;
 using CSCore.Codecs;
-using System.Threading.Tasks;
 
 namespace AudioEngine.Domain
 {
@@ -18,7 +15,7 @@ namespace AudioEngine.Domain
 
         public Mixer()
         {
-            var fileWaveSource = CodecFactory.Instance.GetCodec(@"C:\Users\Simon\source\repos\cloud-j-backend\AudioEngine\TestMp3s\Sam Paganini - Rave (Original Mix).mp3");
+            var fileWaveSource = CodecFactory.Instance.GetCodec(@"C:\Users\simon\IdeaProjects\cloud-j-backend\AudioEngine\TestMp3s\Sam Paganini - Rave (Original Mix).mp3");
 
             const int mixerSampleRate = 44100; //44.1kHz
 

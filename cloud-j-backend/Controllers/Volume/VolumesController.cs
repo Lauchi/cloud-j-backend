@@ -1,12 +1,5 @@
 ﻿using System.Web.Http;
 using AudioEngine.Domain;
-using CSCore;
-using CSCore.Codecs;
-using CSCore.SoundOut;
-using CSCore.Streams;
-using System.Diagnostics;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace cloud_j_backend.Controllers.Volume
 {
