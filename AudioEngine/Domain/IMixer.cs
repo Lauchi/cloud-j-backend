@@ -6,6 +6,6 @@ namespace AudioEngine.Domain
 {
     public interface IMixer
     {
-        Task SetVolumeAsync(float vol);
+        IList<VolumeSource> Volumes { get; }
     }
 }

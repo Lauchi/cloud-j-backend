@@ -13,9 +13,8 @@ namespace AudioEngine.Domain
     {
         private SimpleMixer _mixer;
         private WasapiOut soundOut;
-        private VolumeSource volumeSource1;
 
-        private IList<VolumeSource> Volumes { get; }
+        public IList<VolumeSource> Volumes { get; }
 
         public Mixer()
         {
@@ -29,6 +28,7 @@ namespace AudioEngine.Domain
                 DivideResult = true //you may play around with this
             };
 
+            VolumeSource volumeSource1;
             //Add any sound track.
             _mixer.AddSource(
                 fileWaveSource
@@ -43,13 +43,6 @@ namespace AudioEngine.Domain
 
             Volumes = new List<VolumeSource>();
             Volumes.Add(volumeSource1);
-        }
-
-        public async Task SetVolumeAsync(float vol)
-        {
-            volumeSource1.Volume = vol;
-            await Task.Delay(1000);
-            volumeSource1.Volume = vol/3;
         }
     }
 }

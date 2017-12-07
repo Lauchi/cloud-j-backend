@@ -27,10 +27,9 @@ namespace cloud_j_backend.Controllers.Volume
         }
 
         [HttpPost]
-        public async Task<IHttpActionResult> ChangeVolumeAsync(int channelId, [FromBody] VolumeDto volumeDto)
+        public IHttpActionResult ChangeVolume(int channelId, [FromBody] VolumeDto volumeDto)
         {
-            await Mixer.SetVolumeAsync(volumeDto.VolumeValue);
-           // Mixer.Volumes[channelId - 1].Volume = volumeDto.VolumeValue;
+            Mixer.Volumes[channelId - 1].Volume = volumeDto.VolumeValue;
             return Ok(volumeDto);
         }
     }
