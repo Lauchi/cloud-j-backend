@@ -47,6 +47,9 @@
     <Reference Include="CSCore, Version=1.2.1.2, Culture=neutral, PublicKeyToken=5a08f2b6f4415dea">
       <HintPath>..\packages\CSCore.1.2.1.2\lib\net35-client\CSCore.dll</HintPath>
     </Reference>
+    <Reference Include="MediaToolkit, Version=1.1.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MediaToolkit.1.1.0.1\lib\net40\MediaToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
     </Reference>
@@ -172,8 +175,10 @@
     <Compile Include="Controllers\Transport\PhaseController.cs" />
     <Compile Include="Controllers\Transport\PlayController.cs" />
     <Compile Include="Controllers\Transport\ResumeController.cs" />
+    <Compile Include="Controllers\Volume\MyUrl.cs" />
     <Compile Include="Controllers\Volume\VolumeDto.cs" />
     <Compile Include="Controllers\Volume\VolumesController.cs" />
+    <Compile Include="Controllers\Volume\YTDownloadController.cs" />
     <Compile Include="DependencyResolution\DefaultRegistry.cs" />
     <Compile Include="DependencyResolution\IoC.cs" />
     <Compile Include="DependencyResolution\StructureMapDependencyScope.cs" />
@@ -201,6 +206,10 @@
     <ProjectReference Include="..\AudioEngine\AudioEngine.csproj">
       <Project>{F221F0FD-5C5F-4836-B0EF-6577E86D374A}</Project>
       <Name>AudioEngine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor\YoutubeExtractor.csproj">
+      <Project>{ecdc127f-8def-4f99-8300-72c13597339d}</Project>
+      <Name>YoutubeExtractor</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
