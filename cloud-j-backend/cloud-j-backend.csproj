@@ -168,6 +168,7 @@
     <Compile Include="App_Start\StructuremapWebApi.cs" />
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\Load\PauseController.cs" />
     <Compile Include="Controllers\Transport\PauseController.cs" />
     <Compile Include="Controllers\Transport\PhaseController.cs" />
     <Compile Include="Controllers\Transport\PlayController.cs" />

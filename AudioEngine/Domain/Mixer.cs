@@ -57,5 +57,15 @@ namespace AudioEngine.Domain
 
         public IList<VolumeSource> Volumes { get; }
         public IList<Channel> Channels { get; } = new List<Channel>();
+
+        public void Unload(int channelId)
+        {
+            _mixer.RemoveSource(channelId);
+        }
+
+        public void Load(int channelId, string fileName)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

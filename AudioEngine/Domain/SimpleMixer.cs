@@ -42,13 +42,12 @@ namespace AudioEngine.Domain
             }
         }
 
-        public void RemoveSource(ISampleSource source)
+        public void RemoveSource(int index)
         {
             //don't throw null ex here
             lock (_lockObj)
             {
-                if (Contains(source))
-                    _sampleSources.Remove(source);
+                _sampleSources.RemoveAt(index);
             }
         }
 
@@ -88,7 +87,7 @@ namespace AudioEngine.Domain
                         else
                         {
                             //raise event here
-                            RemoveSource(sampleSource); //remove the input to make sure that the event gets only raised once.
+                            RemoveSource(m); //remove the input to make sure that the event gets only raised once.
                         }
                     }
 

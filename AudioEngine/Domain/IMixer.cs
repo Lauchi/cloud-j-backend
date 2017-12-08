@@ -1,4 +1,5 @@
-﻿using CSCore.Streams;
+﻿using System;
+using CSCore.Streams;
 using System.Collections.Generic;
 using CSCore;
 
@@ -8,6 +9,8 @@ namespace AudioEngine.Domain
     {
         IList<VolumeSource> Volumes { get; }
         IList<Channel> Channels { get; }
+        void Unload(int channelId);
+        void Load(int channelId, string fileName);
     }
 
     public class Channel
