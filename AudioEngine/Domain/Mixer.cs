@@ -15,9 +15,6 @@ namespace AudioEngine.Domain
 
         public Mixer()
         {
-            var fileWaveSource = CodecFactory.Instance.GetCodec(FileLocations.File1);
-            var fileWaveSource2 = CodecFactory.Instance.GetCodec(FileLocations.File2);
-
             const int mixerSampleRate = 44100; //44.1kHz
 
             _mixer = new SimpleMixer(2, mixerSampleRate) //output: stereo, 44,1kHz
