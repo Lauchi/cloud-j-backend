@@ -171,6 +171,7 @@
     <Compile Include="Controllers\Transport\PauseController.cs" />
     <Compile Include="Controllers\Transport\PhaseController.cs" />
     <Compile Include="Controllers\Transport\PlayController.cs" />
+    <Compile Include="Controllers\Transport\ResumeController.cs" />
     <Compile Include="Controllers\Volume\VolumeDto.cs" />
     <Compile Include="Controllers\Volume\VolumesController.cs" />
     <Compile Include="DependencyResolution\DefaultRegistry.cs" />
