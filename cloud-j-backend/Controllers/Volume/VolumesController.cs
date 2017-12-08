@@ -13,12 +13,6 @@ namespace cloud_j_backend.Controllers.Volume
             Mixer = mixer;
         }
 
-        [HttpGet]
-        public IHttpActionResult Init()
-        {
-            return Ok();
-        }
-
         [HttpPost]
         public IHttpActionResult ChangeVolume(int channelId, [FromBody] VolumeDto volumeDto)
         {

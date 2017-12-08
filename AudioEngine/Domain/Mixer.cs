@@ -51,5 +51,6 @@ namespace AudioEngine.Domain
         }
 
         public IList<VolumeSource> Volumes { get; }
+        public IList<Channel> Channels { get; }
     }
 }
