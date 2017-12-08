@@ -18,7 +18,7 @@ namespace cloud_j_backend.Controllers.Transport
         public IHttpActionResult Pause(int channelId, [FromBody] FileDto fileDto)
         {
             Mixer.Load(channelId, fileDto.FileName);
-            return Ok($"loaded");
+            return Ok($"loaded {fileDto.FileName}");
         }
     }
 

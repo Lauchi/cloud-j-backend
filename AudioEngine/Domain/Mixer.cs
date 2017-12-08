@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using AudioEngine.Config;
 using CSCore;
 using CSCore.Codecs;
@@ -25,37 +26,16 @@ namespace AudioEngine.Domain
                 DivideResult = true //you may play around with this
             };
 
-            VolumeSource volumeSource1, volumeSource2;
-            //Add any sound track.
-            _mixer.AddSource(
-                fileWaveSource
-                    .ChangeSampleRate(mixerSampleRate)
-                    .ToStereo()
-                    .AppendSource(x => new VolumeSource(x.ToSampleSource()), out volumeSource1));
-
-            _mixer.AddSource(
-                fileWaveSource2
-                    .ChangeSampleRate(mixerSampleRate)
-                    .ToStereo()
-                    .AppendSource(x => new VolumeSource(x.ToSampleSource()), out volumeSource2));
+            Load(1, FileLocations.File1);
+            Load(2, FileLocations.File2);
 
             //Initialize the soundout with the mixer.
             soundOut = new WasapiOut {Latency = 200}; //better use a quite high latency
             soundOut.Initialize(_mixer.ToWaveSource());
             soundOut.Play();
-
-            Volumes = new List<VolumeSource>();
-            Volumes.Add(volumeSource1);
-            Volumes.Add(volumeSource2);
-
-            volumeSource1.Volume = 0f;
-            volumeSource2.Volume = 0f;
-
-            Channels.Add(new Channel(fileWaveSource));
-            Channels.Add(new Channel(fileWaveSource2));
         }
 
-        public IList<VolumeSource> Volumes { get; }
+        public IList<VolumeSource> Volumes { get; } = new List<VolumeSource>();
         public IList<Channel> Channels { get; } = new List<Channel>();
 
         public void Unload(int channelId)
@@ -76,6 +56,10 @@ namespace AudioEngine.Domain
                     .ToStereo()
                     .AppendSource(x => new VolumeSource(x.ToSampleSource()), out volsource));
             volsource.Volume = 0;
+
+            if (Volumes.Count < channelId) Volumes.Add(volsource);
+            if (Channels.Count < channelId) Channels.Add(new Channel(fileWaveSource));
+
             Volumes[channelId - 1] = volsource;
             Channels[channelId - 1] = new Channel(fileWaveSource);
         }

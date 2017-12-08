@@ -3,7 +3,7 @@
     public static class FileLocations
     {
         public static string BaseDir =>
-            @"C:\csharp\new\cloud-j-backend\AudioEngine\TestMp3s";
+            @"C:\Users\simon\IdeaProjects\cloud-j-backend\AudioEngine\TestMp3s";
         public static string File1 =>
             $@"{BaseDir}\Sam Paganini - Rave (Original Mix).mp3";
 
