@@ -2,10 +2,6 @@
 {
     public class MyUrl
     {
-        public MyUrl(string url)
-        {
-            Url = url;
-        }
 
         public string Url { get; set; }
     }
