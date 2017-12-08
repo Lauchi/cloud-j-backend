@@ -1,5 +1,6 @@
 ﻿using CSCore.Streams;
 using System.Collections.Generic;
+using CSCore;
 
 namespace AudioEngine.Domain
 {
@@ -11,9 +12,16 @@ namespace AudioEngine.Domain
 
     public class Channel
     {
-        public void Play()
+        public IWaveSource Source { get; }
+
+        public Channel(IWaveSource source)
         {
-            throw new System.NotImplementedException();
+            Source = source;
+        }
+
+        public void ResumeToStart()
+        {
+            Source.Position = 0;
         }
     }
 }

@@ -47,9 +47,15 @@ namespace AudioEngine.Domain
             Volumes = new List<VolumeSource>();
             Volumes.Add(volumeSource1);
             Volumes.Add(volumeSource2);
+
+            volumeSource1.Volume = 0f;
+            volumeSource2.Volume = 0f;
+
+            Channels.Add(new Channel(fileWaveSource));
+            Channels.Add(new Channel(fileWaveSource2));
         }
 
         public IList<VolumeSource> Volumes { get; }
-        public IList<Channel> Channels { get; }
+        public IList<Channel> Channels { get; } = new List<Channel>();
     }
 }

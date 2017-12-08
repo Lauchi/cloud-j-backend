@@ -13,10 +13,18 @@ namespace cloud_j_backend.Controllers.Transport
             Mixer = mixer;
         }
 
-        [HttpPost]
-        public IHttpActionResult ChangeVolume(int channelId)
+        [HttpGet]
+        public IHttpActionResult getPosition(int channelId)
         {
-            Mixer.Channels[channelId - 1].Play();
+            var sourcePosition = Mixer.Channels[channelId - 1].Source.Position;
+            return Ok(sourcePosition);
+        }
+
+        [HttpPost]
+        public IHttpActionResult Play(int channelId)
+        {
+            Mixer.Volumes[channelId - 1].Volume = 1f;
+            Mixer.Channels[channelId - 1].ResumeToStart();
             return Ok("play");
         }
     }
