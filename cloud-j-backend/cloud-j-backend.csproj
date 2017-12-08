@@ -166,6 +166,9 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
+    <Content Include="YTELib\Newtonsoft.Json.dll" />
+    <Content Include="YTELib\Newtonsoft.Json.xml" />
+    <Content Include="YTELib\YoutubeExtractor.dll" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\StructuremapMvc.cs" />
