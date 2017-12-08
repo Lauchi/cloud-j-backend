@@ -168,6 +168,7 @@
     <Compile Include="App_Start\StructuremapWebApi.cs" />
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\Transport\PauseController.cs" />
     <Compile Include="Controllers\Transport\PlayController.cs" />
     <Compile Include="Controllers\Volume\VolumeDto.cs" />
     <Compile Include="Controllers\Volume\VolumesController.cs" />

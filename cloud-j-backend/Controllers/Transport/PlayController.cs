@@ -24,7 +24,7 @@ namespace cloud_j_backend.Controllers.Transport
         public IHttpActionResult Play(int channelId)
         {
             Mixer.Volumes[channelId - 1].Volume = 1f;
-            Mixer.Channels[channelId - 1].ResumeToStart();
+            Mixer.Channels[channelId - 1].Play();
             return Ok("play");
         }
     }
