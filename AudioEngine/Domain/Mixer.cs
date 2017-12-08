@@ -65,7 +65,19 @@ namespace AudioEngine.Domain
 
         public void Load(int channelId, string fileName)
         {
-            throw new System.NotImplementedException();
+            var fileWaveSource = CodecFactory.Instance.GetCodec(fileName);
+
+            const int mixerSampleRate = 44100; //44.1kHz
+
+            VolumeSource volsource;
+            _mixer.AddSource(
+                fileWaveSource
+                    .ChangeSampleRate(mixerSampleRate)
+                    .ToStereo()
+                    .AppendSource(x => new VolumeSource(x.ToSampleSource()), out volsource));
+            volsource.Volume = 0;
+            Volumes[channelId - 1] = volsource;
+            Channels[channelId - 1] = new Channel(fileWaveSource);
         }
     }
 }
