@@ -2,10 +2,12 @@
 {
     public static class FileLocations
     {
+        public static string BaseDir =>
+            @"C:\csharp\new\cloud-j-backend\AudioEngine\TestMp3s";
         public static string File1 =>
-            @"C:\Users\simon\IdeaProjects\cloud-j-backend\AudioEngine\TestMp3s\Sam Paganini - Rave (Original Mix).mp3";
+            $@"{BaseDir}\Sam Paganini - Rave (Original Mix).mp3";
 
         public static string File2 =>
-            @"C:\Users\simon\Desktop\Solomun - Medea (Original Mix) [quality dance music].mp3";
+            $@"{BaseDir}\Solomun - Medea (Original Mix) [quality dance music].mp3";
     }
 }
