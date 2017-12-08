@@ -18,7 +18,7 @@ namespace cloud_j_backend.Controllers.Transport
         {
             Mixer.Volumes[channelId - 1].Volume = 0f;
             var mixerChannel = Mixer.Channels[channelId - 1];
-            mixerChannel.PausePosition = mixerChannel.Source.Position;
+            mixerChannel.PausePosition = mixerChannel.Position;
             return Ok(mixerChannel.PausePosition);
         }
     }

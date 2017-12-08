@@ -16,7 +16,7 @@ namespace cloud_j_backend.Controllers.Transport
         [HttpGet]
         public IHttpActionResult getPosition(int channelId)
         {
-            var sourcePosition = Mixer.Channels[channelId - 1].Source.Position;
+            var sourcePosition = Mixer.Channels[channelId - 1].Position;
             return Ok(sourcePosition);
         }
 

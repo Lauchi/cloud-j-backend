@@ -12,8 +12,14 @@ namespace AudioEngine.Domain
 
     public class Channel
     {
-        public IWaveSource Source { get; }
+        private IWaveSource Source { get; }
         public long PausePosition { get; set; }
+
+        public long Position
+        {
+            get { return Source.Position; }
+            set { Source.Position = value; }
+        }
 
         public Channel(IWaveSource source)
         {
