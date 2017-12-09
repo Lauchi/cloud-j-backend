@@ -22,21 +22,36 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-            <div  id="channel-01-toggle-play-pause-form" style="color: #000000; text-align: center;">
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" style="left: 70px">
                 <h2>Channel 01</h2>
+            <div  id="channel-01-toggle-play-pause-form" style="color: #000000; text-align: center; position: absolute;">
+
                 <form id="play-pause-form" method="post" action="http://localhost:49926/channels/1/play">
                     <!--input type="submit" value="play" class="prevent-default" />-->
                     <button class="metal radial" id="channel-01-toggle-play-pause-button">&#9656;</button>
                 </form>
             </div>
 
-            <div id="channel-01-toggle-resume-form" style="color: #000000; text-align: center;">
+            <div id="channel-01-toggle-resume-form" style="color: #000000; text-align: center; position: absolute; left: 200px;">
                 <form id="resume-form" method="post" action="http://localhost:49926/channels/1/resume">
                     <!--input type="submit" value="play" class="prevent-default" />-->
                     <button class="metal radial" id="channel-01-resume-button" style="font-size: 24px">CUE</button>
                 </form>
             </div>
+
+                <div id="channel-02-fow-form" style="color: #000000; text-align: center; position: absolute; top: 250px;">
+                    <form id="fow-form" method="post" action="http://localhost:49926/channels/2/fow">
+                        <!--input type="submit" value="play" class="prevent-default" />-->
+                        <button class="metal radial" id="channel-02-fow-button" style="font-size: 24px">fwd</button>
+                    </form>
+                </div>
+
+                <div id="channel-02-bac-form" style="color: #000000; text-align: center; position: absolute; top: 250px; left: 200px;">
+                    <form id="bac-form" method="post" action="http://localhost:49926/channels/2/bac">
+                        <!--input type="submit" value="play" class="prevent-default" />-->
+                        <button class="metal radial" id="channel-02-bac-button" style="font-size: 24px">bkwd</button>
+                    </form>
+                </div>
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" style="color: #000000; text-align: center;">
@@ -47,28 +62,29 @@
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" >
-                <div id="channel-02-toggle-play-pause-form" style="color: #000000; text-align: center; float: left">
-                    <h2>Channel 02</h2>
+                <h2>Channel 02</h2>
+                <div id="channel-02-toggle-play-pause-form" style="color: #000000; text-align: center; position: absolute;">
+
                     <form id="play-pause-form" method="post" action="http://localhost:49926/channels/2/pause">
                         <button class="metal radial play-pause-buttons" id="channel-02-toggle-play-pause-button">&#9656;</button>
                     </form>
                 </div>
 
-                <div id="channel-02-toggle-resume-form" style="color: #000000; text-align: center; float: left">
+                <div id="channel-02-toggle-resume-form" style="color: #000000; text-align: center; position: absolute; left: 200px;">
                     <form id="resume-form" method="post" action="http://localhost:49926/channels/2/resume">
                         <!--input type="submit" value="play" class="prevent-default" />-->
                         <button class="metal radial" id="channel-02-resume-button" style="font-size: 24px">CUE</button>
                     </form>
                 </div>
 
-                <div id="channel-02-fow-form" style="color: #000000; text-align: center; float: right">
+                <div id="channel-02-fow-form" style="color: #000000; text-align: center; position: absolute; top: 250px;">
                     <form id="fow-form" method="post" action="http://localhost:49926/channels/2/fow">
                         <!--input type="submit" value="play" class="prevent-default" />-->
                         <button class="metal radial" id="channel-02-fow-button" style="font-size: 24px">fwd</button>
                     </form>
                 </div>
 
-                <div id="channel-02-bac-form" style="color: #000000; text-align: center;  float: right">
+                <div id="channel-02-bac-form" style="color: #000000; text-align: center; position: absolute; top: 250px; left: 200px;">
                     <form id="bac-form" method="post" action="http://localhost:49926/channels/2/bac">
                         <!--input type="submit" value="play" class="prevent-default" />-->
                         <button class="metal radial" id="channel-02-bac-button" style="font-size: 24px">bkwd</button>
