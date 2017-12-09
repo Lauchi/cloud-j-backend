@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config\FileLocations.cs" />
+    <Compile Include="Domain\BiQuadFilterSource.cs" />
     <Compile Include="Domain\IMixer.cs" />
     <Compile Include="Domain\Mixer.cs" />
     <Compile Include="Domain\SimpleMixer.cs" />

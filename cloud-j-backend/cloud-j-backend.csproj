@@ -173,6 +173,8 @@
     <Compile Include="App_Start\StructuremapWebApi.cs" />
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\Filters\ApplyFilterController.cs" />
+    <Compile Include="Controllers\Filters\FreqDto.cs" />
     <Compile Include="Controllers\Load\LoadController.cs" />
     <Compile Include="Controllers\Load\UnLoadController.cs" />
     <Compile Include="Controllers\Transport\PauseController.cs" />
