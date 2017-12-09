@@ -94,6 +94,16 @@
         </div>
     </div>
 
+    <div id="faderDiv" style="position:absolute;top:1000px;left:500px;width:500px">
+      <label for="fader">Crossfading</label>
+      <input id="fader" type="range" min="0" max="1" value="0.5" step="0.0025"/>
+    </div>
+
+    <div id="filterDiv" style="position:absolute;top:800px;left:500px;width:500px">
+      <label for="filter">Filter</label>
+      <input id="filter" type="range" min="0" max="1" value="1.0" step="0.0025"/>
+    </div>
+
 
     <script src="./jquery.js" type="text/javascript" language="javascript"></script>
     <script>
@@ -106,6 +116,24 @@
             alert('clicked');
             var url = 
         });*/
+
+	$('#fader').on('input', event => {
+	  const volChan1 = 1 - $('#fader')[0].value;
+	  const volChan2 = 1 - volChan1;
+	  //$form = $(this); //wrap this in jQuery
+	  var url1 = 'http://localhost:49926/channels/1/volume?vol=' + volChan1.toString();
+	  var url2 = 'http://localhost:49926/channels/2/volume?vol=' + volChan2.toString();
+	  $.post(url1);
+	  $.post(url2);
+	});
+
+	$('#filter').on('input', event => {
+	  const filterVal = $('#filter')[0].value;
+	  //$form = $(this); //wrap this in jQuery
+	  var url = 'http://localhost:49926/channels/1/applyFilter?freqParam=' + filterVal.toString();
+	  console.log(url);
+	  $.post(url);
+	});
 
 
         $('#channel-01-toggle-play-pause-form').on("submit", function (event) {
