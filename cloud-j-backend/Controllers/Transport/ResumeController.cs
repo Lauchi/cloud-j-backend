@@ -14,7 +14,7 @@ namespace cloud_j_backend.Controllers.Transport
         }
 
         [HttpPost]
-        public IHttpActionResult Play(int channelId )
+        public IHttpActionResult Resume(int channelId )
         {
             Mixer.Channels[channelId - 1].Position = 0;
             return Ok(Mixer.Channels[channelId - 1].Position);

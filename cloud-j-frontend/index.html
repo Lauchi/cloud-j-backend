@@ -43,16 +43,20 @@
                 </form>
             </div>
 
-            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" id="channel-02-toggle-play-pause-form" style="color: #000000; text-align: center;">
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" >
+            <div id="channel-02-toggle-play-pause-form" style="color: #000000; text-align: center;">
                 <h2>Channel 02</h2>
                 <form id="play-pause-form" method="post" action="http://localhost:49926/channels/2/pause">
                     <button class="metal radial play-pause-buttons" id="channel-02-toggle-play-pause-button">&#9656;</button>
                 </form>
+            </div>
 
-                <form id="resume-form" method="post" action="http://localhost:49926/channels/1/resume">
+            <div id="channel-02-toggle-resume-form" style="color: #000000; text-align: center;">
+                <form id="resume-form" method="post" action="http://localhost:49926/channels/2/resume">
                     <!--input type="submit" value="play" class="prevent-default" />-->
-                    <button class="metal radial" id="channel-01-resume-button" style="font-size: 24px">CUE</button>
+                    <button class="metal radial" id="channel-02-resume-button" style="font-size: 24px">CUE</button>
                 </form>
+            </div>
             </div>
         </div>
     </div>
@@ -74,7 +78,7 @@
         $('#channel-01-toggle-play-pause-form').on("submit", function (event) {
             event.preventDefault();
             $form = $(this); //wrap this in jQuery
-            var $url = $form.attr('action');
+            var $url = 'http://localhost:49926/channels/2/resume';
             $.post($url, function (data) {
                 //alert(data);
             });
@@ -84,6 +88,15 @@
             event.preventDefault();
             $form = $(this); //wrap this in jQuery
             var $url = $form.attr('action');
+            $.post($url, function (data) {
+                //alert(data);
+            });
+        });
+
+        $('#channel-02-toggle-resume-form').on("click", function (event) {
+            event.preventDefault();
+            $form = $(this); //wrap this in jQuery
+            var $url = 'http://localhost:49926/channels/2/resume';
             $.post($url, function (data) {
                 //alert(data);
             });

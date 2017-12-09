@@ -13,13 +13,6 @@ namespace cloud_j_backend.Controllers.Transport
             Mixer = mixer;
         }
 
-        [HttpGet]
-        public IHttpActionResult getPosition(int channelId)
-        {
-            var sourcePosition = Mixer.Channels[channelId - 1].Position;
-            return Ok(sourcePosition);
-        }
-
         [HttpPost]
         public IHttpActionResult Play(int channelId)
         {
