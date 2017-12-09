@@ -7,6 +7,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cloud-j-backend", "cloud-j-
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioEngine", "AudioEngine\AudioEngine.csproj", "{F221F0FD-5C5F-4836-B0EF-6577E86D374A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{9CA37351-CE5D-44FA-B20A-2F7C00C24CA5}"
+ProjectSection(SolutionItems) = preProject
+	cloud-j-frontend\css\bootstrap-3.3.7.min.css = cloud-j-frontend\css\bootstrap-3.3.7.min.css
+	cloud-j-frontend\css\button.css = cloud-j-frontend\css\button.css
+	cloud-j-frontend\.index.html.swp = cloud-j-frontend\.index.html.swp
+	cloud-j-frontend\index.html = cloud-j-frontend\index.html
+	cloud-j-frontend\jquery.js = cloud-j-frontend\jquery.js
+	cloud-j-frontend\logo.png = cloud-j-frontend\logo.png
+	cloud-j-frontend\play-button.png = cloud-j-frontend\play-button.png
+EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
