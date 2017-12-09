@@ -3,21 +3,39 @@ using AudioEngine.Domain;
 
 namespace cloud_j_backend.Controllers.Transport
 {
-    [Route("phase")]
-    public class PhaseController : ApiController
+    [Route("fow")]
+         public class ForwardController : ApiController
+         {
+             public IMixer Mixer { get; }
+
+             public ForwardController(IMixer mixer)
+             {
+                 Mixer = mixer;
+             }
+
+             [HttpPost]
+             public IHttpActionResult Play(int channelId )
+             {
+                 Mixer.Channels[channelId - 1].Position += 2500;
+                 return Ok();
+             }
+         }
+
+    [Route("bac")]
+    public class BackwardController : ApiController
     {
         public IMixer Mixer { get; }
 
-        public PhaseController(IMixer mixer)
+        public BackwardController(IMixer mixer)
         {
             Mixer = mixer;
         }
 
         [HttpPost]
-        public IHttpActionResult Play(int channelId, [FromBody] PhaseDto phaseDto )
+        public IHttpActionResult Play(int channelId)
         {
-            Mixer.Channels[channelId - 1].Position += phaseDto.phaseValue;
-            return Ok(Mixer.Channels[channelId - 1].Position);
+            Mixer.Channels[channelId - 1].Position -= 2500;
+            return Ok();
         }
     }
 

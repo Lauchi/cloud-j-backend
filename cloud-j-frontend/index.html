@@ -47,19 +47,33 @@
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" >
-            <div id="channel-02-toggle-play-pause-form" style="color: #000000; text-align: center;">
-                <h2>Channel 02</h2>
-                <form id="play-pause-form" method="post" action="http://localhost:49926/channels/2/pause">
-                    <button class="metal radial play-pause-buttons" id="channel-02-toggle-play-pause-button">&#9656;</button>
-                </form>
-            </div>
+                <div id="channel-02-toggle-play-pause-form" style="color: #000000; text-align: center; float: left">
+                    <h2>Channel 02</h2>
+                    <form id="play-pause-form" method="post" action="http://localhost:49926/channels/2/pause">
+                        <button class="metal radial play-pause-buttons" id="channel-02-toggle-play-pause-button">&#9656;</button>
+                    </form>
+                </div>
 
-            <div id="channel-02-toggle-resume-form" style="color: #000000; text-align: center;">
-                <form id="resume-form" method="post" action="http://localhost:49926/channels/2/resume">
-                    <!--input type="submit" value="play" class="prevent-default" />-->
-                    <button class="metal radial" id="channel-02-resume-button" style="font-size: 24px">CUE</button>
-                </form>
-            </div>
+                <div id="channel-02-toggle-resume-form" style="color: #000000; text-align: center; float: left">
+                    <form id="resume-form" method="post" action="http://localhost:49926/channels/2/resume">
+                        <!--input type="submit" value="play" class="prevent-default" />-->
+                        <button class="metal radial" id="channel-02-resume-button" style="font-size: 24px">CUE</button>
+                    </form>
+                </div>
+
+                <div id="channel-02-fow-form" style="color: #000000; text-align: center; float: right">
+                    <form id="fow-form" method="post" action="http://localhost:49926/channels/2/fow">
+                        <!--input type="submit" value="play" class="prevent-default" />-->
+                        <button class="metal radial" id="channel-02-fow-button" style="font-size: 24px">fwd</button>
+                    </form>
+                </div>
+
+                <div id="channel-02-bac-form" style="color: #000000; text-align: center;  float: right">
+                    <form id="bac-form" method="post" action="http://localhost:49926/channels/2/bac">
+                        <!--input type="submit" value="play" class="prevent-default" />-->
+                        <button class="metal radial" id="channel-02-bac-button" style="font-size: 24px">bkwd</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
@@ -96,6 +110,8 @@
             });
         });
 
+
+
         $('#channel-02-toggle-resume-form').on("click", function (event) {
             event.preventDefault();
             $form = $(this); //wrap this in jQuery
@@ -104,6 +120,26 @@
                 //alert(data);
             });
         });
+
+        $('#channel-02-fow-form').on("click", function (event) {
+            event.preventDefault();
+            $form = $(this); //wrap this in jQuery
+            var $url = 'http://localhost:49926/channels/2/fow';
+            $.post($url, function (data) {
+                //alert(data);
+            });
+        });
+
+        $('#channel-02-bac-form').on("click", function (event) {
+            event.preventDefault();
+            $form = $(this); //wrap this in jQuery
+            var $url = 'http://localhost:49926/channels/2/bac';
+            $.post($url, function (data) {
+                //alert(data);
+            });
+        });
+
+
 
         $('#channel-01-toggle-resume-form').on("click", function (event) {
             event.preventDefault();
