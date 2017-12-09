@@ -28,12 +28,12 @@ namespace cloud_j_backend.Controllers.Filters
         }
 
         [HttpPost]
-        public IHttpActionResult ApplyFilter(int channelId, FreqDto freqParam)
+        public IHttpActionResult ApplyFilter(int channelId, [FromUri] float freqParam)
         {
             // e^((log(2) + 3 * log(5)) * x  + log(20))
             int maxFreq = 5000;
             int minFreq = 20;
-            double freq = Math.Pow(Math.E, ((Math.Log(2) + 3 * Math.Log(5)) * freqParam.FreqValue + Math.Log(20)));
+            double freq = Math.Pow(Math.E, ((Math.Log(2) + 3 * Math.Log(5)) * freqParam + Math.Log(20)));
             Mixer.ApplyLowPass(channelId, Convert.ToInt32(freq));
             return Ok($"Set low pass filter to {freq}");
         }
