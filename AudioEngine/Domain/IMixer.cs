@@ -11,6 +11,7 @@ namespace AudioEngine.Domain
         IList<Channel> Channels { get; }
         void Unload(int channelId);
         void Load(int channelId, string fileName);
+        void ApplyLowPass(int channelId, int freq);
     }
 
     public class Channel
