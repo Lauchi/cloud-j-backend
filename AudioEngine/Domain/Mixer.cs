@@ -26,10 +26,14 @@ namespace AudioEngine.Domain
             Load(1, FileLocations.File1);
             Load(2, FileLocations.File2);
 
+
+
             //Initialize the soundout with the mixer.
             soundOut = new WasapiOut {Latency = 200}; //better use a quite high latency
             soundOut.Initialize(_mixer.ToWaveSource());
             soundOut.Play();
+
+            Channels[0].Position = 200000;
         }
 
         public IList<VolumeSource> Volumes { get; } = new List<VolumeSource>();
