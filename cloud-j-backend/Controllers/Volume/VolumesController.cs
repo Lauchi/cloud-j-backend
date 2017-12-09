@@ -14,10 +14,10 @@ namespace cloud_j_backend.Controllers.Volume
         }
 
         [HttpPost]
-        public IHttpActionResult ChangeVolume(int channelId, [FromBody] VolumeDto volumeDto)
+        public IHttpActionResult ChangeVolume(int channelId, [FromUri] float vol)
         {
-            Mixer.Volumes[channelId - 1].Volume = volumeDto.VolumeValue;
-            return Ok(volumeDto);
+            Mixer.Volumes[channelId - 1].Volume = vol;
+            return Ok();
         }
     }
 }
