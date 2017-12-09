@@ -39,14 +39,14 @@
                 </form>
             </div>
 
-                <div id="channel-02-fow-form" style="color: #000000; text-align: center; position: absolute; top: 250px;">
+                <div style="color: #000000; text-align: center; position: absolute; top: 250px;">
                     <form id="fow-form" method="post" action="http://localhost:49926/channels/2/fow">
                         <!--input type="submit" value="play" class="prevent-default" />-->
                         <button class="metal radial" id="channel-02-fow-button" style="font-size: 24px">fwd</button>
                     </form>
                 </div>
 
-                <div id="channel-02-bac-form" style="color: #000000; text-align: center; position: absolute; top: 250px; left: 200px;">
+                <div style="color: #000000; text-align: center; position: absolute; top: 250px; left: 200px;">
                     <form id="bac-form" method="post" action="http://localhost:49926/channels/2/bac">
                         <!--input type="submit" value="play" class="prevent-default" />-->
                         <button class="metal radial" id="channel-02-bac-button" style="font-size: 24px">bkwd</button>
@@ -130,7 +130,7 @@
 	$('#filter').on('input', event => {
 	  const filterVal = $('#filter')[0].value;
 	  //$form = $(this); //wrap this in jQuery
-	  var url = 'http://localhost:49926/channels/1/applyFilter?freqParam=' + filterVal.toString();
+	  var url = 'http://localhost:49926/channels/2/applyFilter?freqParam=' + filterVal.toString();
 	  console.log(url);
 	  $.post(url);
 	});
